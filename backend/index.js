@@ -15,3 +15,7 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
+
+const authroutes = require("./routes/authRoutes");
+app.use("/auth", authroutes);
+
