@@ -26,3 +26,6 @@ app.listen(PORT, () => {
 
 const authroutes = require("./routes/authRoutes");
 app.use("/auth", authroutes);
+
+const genreRoutes = require("./routes/genreRoutes");
+app.use("/genre", genreRoutes);
