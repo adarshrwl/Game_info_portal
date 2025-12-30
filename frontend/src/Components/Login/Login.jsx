@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,8 +24,9 @@ export const Login = () => {
 
       if (res.ok) {
         toast.success(data.message || "Login successful");
+        navigate("/dashboard");
       } else {
-        toast.error(data.message || "Login failed");
+        toast.error(data.msg);
       }
 
       console.log(data);
